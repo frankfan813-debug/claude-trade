@@ -1,0 +1,17 @@
+{
+  "name": "claude-trader",
+  "version": "1.0.0",
+  "description": "24/7 AI trading agent powered by Claude Code Routines",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "account": "node scripts/alpaca.js getAccount",
+    "positions": "node scripts/alpaca.js getPositions",
+    "orders": "node scripts/alpaca.js getOrders",
+    "market-open": "node scripts/alpaca.js isMarketOpen",
+    "research": "node scripts/research.js researchMacro",
+    "earnings": "node scripts/research.js researchEarnings"
+  }
+}
