@@ -38,7 +38,6 @@ All state is stored as markdown files in `memory/`. Read and update these on eve
 
 - `ALPACA_KEY` — Alpaca API key ID
 - `ALPACA_SECRET` — Alpaca API secret key
-- `PERPLEXITY_KEY` — Perplexity API key
 - `CLICKUP_TOKEN` — ClickUp personal API token
 - `CLICKUP_LIST_ID` — ClickUp list ID for trade notifications
 - `ALPACA_BASE_URL` — `https://paper-api.alpaca.markets` (paper) or `https://api.alpaca.markets` (live)

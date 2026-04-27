@@ -13,20 +13,27 @@ You are running the Pre-Market Research routine for the Claude Trading Agent. It
 
 1. Read `memory/portfolio.md` to understand current open positions.
 2. Read `memory/watchlist.md` to see existing candidates.
-3. Run `node scripts/research.js researchMacro` to get today's macro landscape.
-4. Run `node scripts/research.js researchEarnings` to find fresh earnings surprises.
-5. For any earnings-surprise tickers or interesting pre-market movers, run `node scripts/research.js researchTicker <SYMBOL>` for up to 5 tickers.
+3. Using your own knowledge and reasoning, analyze today's macro landscape:
+   - What economic data or Fed events are scheduled today?
+   - What is the current market trend (S&P 500, Nasdaq momentum)?
+   - Are there any known sector tailwinds or headwinds?
+4. Identify up to 5 S&P 500 or Nasdaq-100 tickers that are strong swing trade candidates based on:
+   - Recent earnings surprises or upcoming earnings catalysts
+   - Analyst upgrade momentum
+   - Sector rotation trends
+   - Breakout setups (52-week highs, volume surges)
+5. For each candidate, run `node scripts/alpaca.js getQuote '{"symbol":"TICKER"}'` to get current price data from Alpaca.
 6. Update `memory/watchlist.md`:
    - Assign conviction: HIGH (strong catalyst + momentum), MEDIUM, or LOW
    - Remove any stale candidates (no fresh catalyst in 2+ days)
-   - Add new HIGH/MEDIUM candidates from today's research
+   - Add new HIGH/MEDIUM candidates from today's analysis
 7. Append a structured entry to `memory/journal.md` with:
    - Today's macro outlook
    - Top 3 candidates and why
    - Tickers you rejected and why
    - Your overall market read (bullish/neutral/bearish) and confidence
 
-Only mark conviction as HIGH if: clear earnings surprise OR analyst upgrade with price target raise AND stock not already up >3% pre-market AND liquidity >$10M daily volume.
+Only mark conviction as HIGH if: clear earnings catalyst OR strong sector momentum AND liquidity >$10M daily volume AND not already extended >3% from recent base.
 
 After updating both files, commit the changes to git:
 ```

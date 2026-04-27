@@ -17,8 +17,8 @@ You are running the Midday Scan routine for the Claude Trading Agent. It is ~12:
    a. Check current price vs. entry price.
    b. If unrealized gain > 5% → prepare to close (profit target hit).
    c. If unrealized loss > 2% → the stop should have triggered; verify and close if not.
-   d. Run `node scripts/research.js researchTicker SYMBOL` — look for any negative catalysts since entry.
-   e. If negative catalyst found and position is flat/down → close the position early.
+   d. Reason through whether any negative catalysts have likely emerged for this ticker (guidance cuts, macro shifts, sector weakness).
+   e. If you identify a likely negative catalyst and position is flat/down → close the position early.
 4. Close any positions that meet exit criteria:
    `node scripts/alpaca.js closePosition '{"symbol":"TICKER"}'`
    Then cancel the associated stop-loss order.
