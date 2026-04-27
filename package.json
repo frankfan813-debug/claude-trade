@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=18"
   },
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  },
   "scripts": {
     "account": "node scripts/alpaca.js getAccount",
     "positions": "node scripts/alpaca.js getPositions",
