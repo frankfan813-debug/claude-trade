@@ -19,10 +19,76 @@ You run on a schedule via Claude Code Routines. Each routine fires you with a sp
 
 ## Strategy
 
-- **Universe**: S&P 500 stocks, Nasdaq-100 stocks
+- **Universe**: S&P 500 stocks, Nasdaq-100 stocks, plus small-cap biotech (see Strategy 2)
 - **Style**: Momentum + news-driven swing trades, 1–5 day holding period
 - **Entry signals**: Strong earnings surprise, analyst upgrades, sector rotation, breakout above 52-week high on volume
 - **Exit signals**: Stop-loss hit, profit target at +5%, negative news catalyst, position held > 5 days
+
+---
+
+### Strategy 1: Fibonacci Breakout
+
+**Concept:** Use Fibonacci retracement levels to identify support/resistance. Enter when price breaks above a well-established resistance level with volume confirmation.
+
+**Resistance definition:** A price level the stock has touched and failed to break at least 3 times over the past 30–90 days. This becomes the breakout trigger.
+
+**Screening criteria:**
+- Stock has been in a clear uptrend or consolidation range
+- Price has tested the same resistance level 3+ times without breaking
+- On the breakout day: price closes above resistance with volume at least 1.5× the 20-day average
+- Fibonacci levels to watch: 38.2%, 50%, 61.8% retracements from the most recent major swing high to swing low — these act as support on pullbacks and resistance on recoveries
+
+**Entry:** Buy on confirmed breakout above resistance (price must close above, not just touch)
+
+**Position size:** Standard — up to 5% of portfolio
+
+**Exit:**
+- Profit target: +8% to +12% (breakouts tend to have larger moves than mean-reversion trades)
+- Stop-loss: just below the broken resistance level (it should now act as support), minimum 2% stop
+- Time stop: exit if no momentum within 3 days of entry
+
+**In pre-market research:** Scan for stocks near known resistance levels with rising volume. Flag as HIGH conviction only if volume confirms the breakout.
+
+---
+
+### Strategy 2: Small-Cap Biotech Dip Buy
+
+**Concept:** Buy small-cap clinical-stage biotech stocks after a sharp drop caused by clinical trial failure or negative news, when the underlying company still has strong fundamentals. Profit on the bounce-back as the market overreacts.
+
+**Screening criteria (ALL must be met to qualify):**
+1. **Sharp drop**: Stock down 20–60% in 1–3 days due to trial failure, FDA rejection, or negative clinical news
+2. **Free cash flow runway**: Company has enough cash to fund at least 12–18 months of operations without raising capital (check cash on hand vs. quarterly burn rate)
+3. **Safety profile**: The failed/negative drug must have a clean safety profile — no serious adverse events or toxicity issues (safety failures are disqualifying; efficacy failures are acceptable)
+4. **Multi-indication potential**: Drug or platform can be applied to multiple diseases or indications — the failed trial does not invalidate the entire pipeline
+5. **Novelty requirement**: Company must have one of:
+   - A proprietary drug discovery platform (AI-driven, novel delivery mechanism, etc.)
+   - Patentable biotechnology (new modality, novel target, first-in-class mechanism)
+   - A pipeline with at least one other asset in Phase 1 or later
+6. **Market cap**: $50M–$2B (small-cap only — avoid micro-caps under $50M)
+
+**Disqualifying factors (any one = skip):**
+- Drug caused serious adverse events or deaths in trials
+- Company has less than 6 months of cash runway
+- No differentiated platform or technology — pure "me-too" drug
+- CEO or management team with history of fraud or SEC violations
+- Already has a competing approved drug that dominates the market
+
+**Entry:**
+- Buy in small size only: maximum 1–2% of portfolio per position (not the standard 5%)
+- Enter in tranches: buy 50% on day 1–2 of the drop, hold remaining 50% to average down if it drops further over the next 5 days
+- Do not chase — if stock already bounced 30%+ from the bottom, skip it
+
+**Exit:**
+- Profit target: +20% to +40% bounce (biotech bounces can be sharp)
+- Stop-loss: 15% below entry (wider stop due to volatility)
+- Time stop: exit within 10 trading days if no bounce materializes
+
+**In pre-market research:** Scan for biotech news — FDA announcements, clinical trial results (ClinicalTrials.gov updates), PDUFA dates. Flag sharp drops in small-cap biotech. Research the company fundamentals before assigning conviction.
+
+**Conviction assignment for biotech dip buys:**
+- HIGH: meets all 6 criteria above, drop is 30%+, cash runway > 18 months
+- MEDIUM: meets 5 of 6 criteria, drop is 20–30%
+- LOW or skip: fails any disqualifying factor
 
 ## Memory Files
 
