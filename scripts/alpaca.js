@@ -5,6 +5,7 @@
  */
 
 const BASE_URL = process.env.ALPACA_BASE_URL || 'https://paper-api.alpaca.markets';
+const DATA_URL = 'https://data.alpaca.markets'; // market data always uses this host
 const KEY = process.env.ALPACA_KEY;
 const SECRET = process.env.ALPACA_SECRET;
 
@@ -19,8 +20,8 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
-async function request(method, path, body = null) {
-  const url = `${BASE_URL}${path}`;
+async function request(method, path, body = null, baseUrl = BASE_URL) {
+  const url = `${baseUrl}${path}`;
   const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
   const res = await fetch(url, opts);
@@ -42,12 +43,12 @@ async function getOrders(status = 'open') {
 }
 
 async function getQuote(symbol) {
-  const data = await request('GET', `/v2/stocks/${symbol}/quotes/latest`);
+  const data = await request('GET', `/v2/stocks/${symbol}/quotes/latest`, null, DATA_URL);
   return data.quote;
 }
 
 async function getLatestBar(symbol) {
-  const data = await request('GET', `/v2/stocks/${symbol}/bars/latest`);
+  const data = await request('GET', `/v2/stocks/${symbol}/bars/latest`, null, DATA_URL);
   return data.bar;
 }
 
