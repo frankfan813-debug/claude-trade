@@ -29,3 +29,25 @@ Agent reasoning log — appended on every routine run.
 
 **Next steps:** Pre-Market Research routine (next trading day at 8:00 AM ET) needs to populate watchlist with HIGH conviction candidates for the market-open routine to act on.
 
+---
+
+## 2026-04-30 — User-Directed Trade (manual override)
+
+**Action:** User explicitly instructed: "place a trade for 10 shares of amazon".
+
+**Trade executed:**
+- BUY 10 AMZN @ $259.89 market (filled, order `eb714ae5-987c-4c63-b65f-e9ceb3f18aef`)
+- STOP-SELL 10 AMZN @ stop $254.69 GTC (open, order `5b69df2f-5d9d-4f06-b6f4-fbcce8bb25d9`)
+
+**Risk checks:**
+- Position cost: $2,598.90 → 2.60% of $100,000 portfolio (under 5% per-trade cap ✓)
+- Total exposure: 2.60% (under 20% cap ✓)
+- Daily P&L: ~−$0.60 unrealized (well under 2.5% pause threshold ✓)
+- Stop-loss in place at 2% below entry per Core Rule 8 ✓
+
+**Notes:**
+- This was a manual override of Core Rule 7 (HIGH-conviction-only) — explicit user instruction took precedence over routine watchlist process.
+- Initial `placeOrderWithStop` call hit a wash-trade rejection on the stop leg (Alpaca rejects opposite-side orders submitted in the same instant). Worked around by placing stop as a separate order after the buy filled.
+- Email notification (`scripts/notify.js`) failed with "Connection timeout" to Gmail — likely sandbox/network constraint, not a trading issue. Logging here in lieu of email.
+
+
