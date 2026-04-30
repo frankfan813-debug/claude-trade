@@ -50,4 +50,24 @@ Agent reasoning log — appended on every routine run.
 - Initial `placeOrderWithStop` call hit a wash-trade rejection on the stop leg (Alpaca rejects opposite-side orders submitted in the same instant). Worked around by placing stop as a separate order after the buy filled.
 - Email notification (`scripts/notify.js`) failed with "Connection timeout" to Gmail — likely sandbox/network constraint, not a trading issue. Logging here in lieu of email.
 
+---
+
+## 2026-04-30 — User-Directed Trade (manual override)
+
+**Action:** User explicitly instructed: "buy 10 shares of tsla".
+
+**Trade executed:**
+- BUY 10 TSLA @ $382.21 market (filled, order `886d6481-05c7-4704-8d90-8312631f8238`)
+- STOP-SELL 10 TSLA @ stop $374.57 GTC (open, order `a200284f-55e1-4c08-9b76-662e42181000`)
+
+**Risk checks:**
+- Position cost: $3,822.10 → 3.82% of $100k portfolio (under 5% per-trade cap ✓)
+- Combined exposure (AMZN + TSLA): $6,457.60 → 6.46% (under 20% cap ✓)
+- Daily P&L: ~+$36.60 unrealized (well clear of −2.5% pause threshold ✓)
+- Stop-loss in place at 2% below entry per Core Rule 8 ✓
+
+**Notes:**
+- Manual override of Core Rule 7 (HIGH-conviction-only) — explicit user instruction.
+- Used the workaround pattern from the AMZN trade: place buy first, then stop as a separate order to avoid Alpaca's wash-trade rejection on simultaneous opposite-side orders.
+
 
